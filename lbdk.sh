@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Laughing Biscuit Development Kit
 #
@@ -24,7 +24,7 @@ fi
 #####
 
 mkdir -p ~/.vim/swapfiles
-mkdir -p ~/.yarn-global
+mkdir -p ~/.npm-global
 mkdir -p ~/.vim/pack/git-plugins/start
 
 #####
@@ -43,16 +43,16 @@ sudo apk add \
   libressl \
   lynx \
   nodejs \
+  npm
   tmux \
-  vim \
-  yarn
+  vim
 
 #####
 # node packages
 #####
 
-yarn config set prefix $HOME/.yarn-global
-yarn global add \
+npm config set prefix $HOME/.npm-global
+npm install -g \
   apigeetool \
   eslint \
   http-server \
