@@ -43,13 +43,16 @@ sudo apk add \
   libressl \
   lynx \
   nodejs \
-  npm
+  npm \
   tmux \
   vim
 
 #####
 # node packages
 #####
+
+# workaround thread stack size for musl
+npm config set unsafe-perm true
 
 npm config set prefix $HOME/.npm-global
 npm install -g \
